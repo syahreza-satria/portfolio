@@ -9,6 +9,7 @@ const ProjectCard = ({ title, description, imageUrl, githubUrl, liveUrl }) => {
 					src={imageUrl}
 					alt={`${title} thumbnail`}
 					fill
+					priority
 					className="object-cover transition-transform duration-300 group-hover:scale-105"
 				/>
 			</div>

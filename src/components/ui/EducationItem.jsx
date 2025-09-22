@@ -15,12 +15,12 @@ const EducationItem = ({ logo, university, degree, gpa, period, link }) => {
 					<a href={link} className="font-medium hover:underline">
 						{university}
 					</a>
-					<p className="text-sm text-gray-500">
+					<p className="text-xs md:text-sm text-gray-500">
 						{degree} (GPA: {gpa})
 					</p>
 				</div>
 			</div>
-			<span className="text-sm font-medium text-gray-600 whitespace-nowrap my-auto">
+			<span className="text-xs md:text-sm font-medium text-gray-600 whitespace-nowrap my-auto">
 				{period}
 			</span>
 		</div>

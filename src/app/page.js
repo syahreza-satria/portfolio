@@ -11,6 +11,16 @@ import {
 	PaypalIcon,
 	LinkIcon,
 } from "@/components/ui/icons";
+import {
+	bubbleMenuItems,
+	profile,
+	projects,
+	education,
+	skillsDev,
+	skillsCreative,
+	socialLinks,
+	donationLinks
+} from "@/data"
 import TextType from "@/components/TextType";
 import DecryptedText from "@/components/DecryptedText";
 import { motion, useScroll } from "motion/react";
@@ -22,140 +32,6 @@ import EducationItem from "@/components/ui/EducationItem";
 import Footer from "@/components/ui/Footer";
 import Marquee from "react-fast-marquee";
 
-
-const bubbleMenuItems = [
-	{
-		label: "HOME",
-		href: "/",
-		ariaLabel: "Home",
-		rotation: -8,
-		hoverStyles: { bgColor: "#3b82f6", textColor: "#ffffff" },
-	},
-	{
-		label: "PROJECT",
-		href: "/project",
-		ariaLabel: "Project",
-		rotation: 8,
-		hoverStyles: { bgColor: "#10b981", textColor: "#ffffff" },
-	},
-	{
-		label: "GEAR",
-		href: "#",
-		ariaLabel: "Gear",
-		rotation: 8,
-		hoverStyles: { bgColor: "#f59e0b", textColor: "#ffffff" },
-	},
-	{
-		label: "CONTACT",
-		href: "#",
-		ariaLabel: "Contact",
-		rotation: -8,
-		hoverStyles: { bgColor: "#8b5cf6", textColor: "#ffffff" },
-	},
-];
-
-const profile = {
-	name: "Syahreza Satria Alfath",
-	bio: `I don't just build websites, I bring them to life. I design beautiful interfaces, write the code that makes them work, and create the stories they tell. I'm a digital creator, from concept to execution.`,
-	avatar: "/assets/img/profilePic.png",
-	cv: "https://drive.google.com/file/d/1gplQTTVjASTT4jr2kvAZTR3lb5jhyZdC/view?usp=drive_link",
-	portfolio:
-		"https://drive.google.com/file/d/1SOjXLSwtvE_g1oVBBl1BJEeFbP6CNLo4/view?usp=sharing",
-};
-
-const projects = [
-	{
-		id: 1,
-		title: "Portfolio Website",
-		description:
-			"Website portofolio pribadi yang dibangun dengan Next.js dan Tailwind CSS.",
-		imageUrl: "/assets/portfolio/portfolio.png",
-		githubUrl: "#",
-		liveUrl: "#",
-	},
-	{
-		id: 2,
-		title: "Finance Web Hutangin",
-		description:
-			"Aplikasi web responsive yang dapat digunakan untuk menghitung pengeluaran dan pemasukan.",
-		imageUrl: "/assets/portfolio/hutangin.png",
-		githubUrl: "#",
-		liveUrl: "#",
-	},
-	{
-		id: 3,
-		title: "Sistem Manajemen F&B",
-		description:
-			"Aplikasi web & mobile untuk manajemen pesanan dan keanggotaan pelanggan.",
-		imageUrl: "/assets/portfolio/lakesideMembership.png",
-		githubUrl: "#",
-		liveUrl: "#",
-	},
-	{
-		id: 4,
-		title: "UI Design for Doctor website",
-		description:
-			"Desain antarmuka untuk website yang bertujuan untuk konsultasi bersama dokter secara gratis.",
-		imageUrl: "/assets/portfolio/helenna.png",
-		githubUrl: "#",
-		liveUrl: "#",
-	},
-];
-
-const education = [
-	{
-		id: 1,
-		logo: "/assets/img/logoTelkom.png",
-		university: "Telkom University",
-		degree: "Bachelor of Information Technology",
-		gpa: "3.29/4.00",
-		period: "Aug 2020 - Sep 2024",
-		link: "https://www.youtube.com/watch?v=xfM4X6inBUk",
-	},
-];
-
-const skillsDev = [
-	"MySQL",
-	"React",
-	"Next.JS",
-	"Tailwind CSS",
-	"Node.js",
-	"JavaScript",
-	"TypeScript",
-	"HTML5",
-	"CSS3",
-	"Laravel",
-	"Bootstrap CSS"
-];
-
-const skillsCreative = [
-	"Adobe Photoshop",
-	"Figma",
-	"Adobe Lightroom",
-	"Capcut",
-	"Canva",
-	"Adobe Premiere Pro",
-	"Notion",
-	"Google Docs",
-	"Google Sheets",
-	"Google Sheets",
-];
-
-const socialLinks = [
-	{ href: "https://github.com/syahreza-satria", icon: <GithubIcon /> },
-	{ href: "https://instagram.com/syahreza_satria", icon: <InstagramIcon /> },
-	{
-		href: "https://linkedin.com/in/syahreza-satria-alfath",
-		icon: <LinkedinIcon />,
-	},
-	{ href: "mailto:satriaeza221@gmail.com", icon: <MailIcon /> },
-	{ href: "https://www.youtube.com/@SyahrezaSatria", icon: <YoutubeIcon /> },
-];
-
-const donationLinks = [
-	{ href: "https://tako.id/SyahrezaSatria", icon: <TakoIcon /> },
-	{ href: "https://paypal.me/SyahrezaSatriaAlfath", icon: <PaypalIcon /> },
-];
 
 export default function Home() {
 	const { scrollYProgress } = useScroll();
@@ -196,7 +72,7 @@ export default function Home() {
 							src={profile.avatar}
 							width={100}
 							height={100}
-							alt="Profile Picture"
+							alt={profile.name}
 							className="rounded-full object-cover"
 						/>
 						<div className="leading-tight flex flex-col">
@@ -212,8 +88,8 @@ export default function Home() {
 							</div>
 							<DecryptedText
 								text={"Syahreza Satria Alfath"}
-								parentClassName="text-2xl font-semibold"
-								encryptedClassName="text-2xl font-semibold"
+								parentClassName="text-lg md:text-2xl font-semibold"
+								encryptedClassName="text-lg md:text-2xl font-semibold"
 								animateOn="hover"
 								revealDirection="start"
 								sequential
@@ -234,7 +110,7 @@ export default function Home() {
 								pauseDuration={2500}
 								showCursor={true}
 								cursorCharacter="|"
-								className="text-gray-500"
+								className="text-gray-500 text-sm md:text-base"
 								textColors={["#6a7282"]}
 							/>
 						</div>
