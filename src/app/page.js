@@ -20,6 +20,8 @@ import BubbleMenu from "@/components/BubbleMenu";
 import ProjectCard from "@/components/ui/ProjectCard";
 import EducationItem from "@/components/ui/EducationItem";
 import Footer from "@/components/ui/Footer";
+import Marquee from "react-fast-marquee";
+
 
 const bubbleMenuItems = [
 	{
@@ -64,37 +66,37 @@ const profile = {
 const projects = [
 	{
 		id: 1,
-		title: "Sistem Manajemen F&B",
+		title: "Portfolio Website",
 		description:
-			"Aplikasi web & mobile untuk manajemen pesanan dan keanggotaan pelanggan.",
-		imageUrl: "https://placehold.co/1920x1080",
+			"Website portofolio pribadi yang dibangun dengan Next.js dan Tailwind CSS.",
+		imageUrl: "/assets/portfolio/portfolio.png",
 		githubUrl: "#",
 		liveUrl: "#",
 	},
 	{
 		id: 2,
-		title: "Portfolio Website",
+		title: "Finance Web Hutangin",
 		description:
-			"Website portofolio pribadi yang dibangun dengan Next.js dan Tailwind CSS.",
-		imageUrl: "https://placehold.co/1920x1080",
+			"Aplikasi web responsive yang dapat digunakan untuk menghitung pengeluaran dan pemasukan.",
+		imageUrl: "/assets/portfolio/hutangin.png",
 		githubUrl: "#",
 		liveUrl: "#",
 	},
 	{
 		id: 3,
-		title: "Content Creator Dashboard",
+		title: "Sistem Manajemen F&B",
 		description:
-			"Dashboard untuk melacak performa konten di berbagai platform sosial.",
-		imageUrl: "https://placehold.co/1920x1080",
+			"Aplikasi web & mobile untuk manajemen pesanan dan keanggotaan pelanggan.",
+		imageUrl: "/assets/portfolio/lakesideMembership.png",
 		githubUrl: "#",
 		liveUrl: "#",
 	},
 	{
 		id: 4,
-		title: "UI/UX Design for E-commerce",
+		title: "UI Design for Doctor website",
 		description:
-			"Desain antarmuka untuk aplikasi e-commerce menggunakan Figma.",
-		imageUrl: "https://placehold.co/1920x1080",
+			"Desain antarmuka untuk website yang bertujuan untuk konsultasi bersama dokter secara gratis.",
+		imageUrl: "/assets/portfolio/helenna.png",
 		githubUrl: "#",
 		liveUrl: "#",
 	},
@@ -112,23 +114,31 @@ const education = [
 	},
 ];
 
-const skillDev = [
-	{ name: "HTML" },
-	{ name: "CSS" },
-	{ name: "Javascript" },
-	{ name: "Bootstrap" },
-	{ name: "Tailwind" },
-	{ name: "Laravel" },
-	{ name: "NextJs" },
-	{ name: "MySQL" },
+const skillsDev = [
+	"MySQL",
+	"React",
+	"Next.JS",
+	"Tailwind CSS",
+	"Node.js",
+	"JavaScript",
+	"TypeScript",
+	"HTML5",
+	"CSS3",
+	"Laravel",
+	"Bootstrap CSS"
 ];
 
-const skillCreative = [
-	{ name: "Adobe Photoshop" },
-	{ name: "Adobe Lightroom" },
-	{ name: "Adobe Premiere Pro" },
-	{ name: "Capcut" },
-	{ name: "Photography" },
+const skillsCreative = [
+	"Adobe Photoshop",
+	"Figma",
+	"Adobe Lightroom",
+	"Capcut",
+	"Canva",
+	"Adobe Premiere Pro",
+	"Notion",
+	"Google Docs",
+	"Google Sheets",
+	"Google Sheets",
 ];
 
 const socialLinks = [
@@ -271,7 +281,7 @@ export default function Home() {
 					{/* Projects Section */}
 					<section className="space-y-4">
 						<h2 className="font-bold text-xl">Checkout my projects!</h2>
-						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
 							{projects.map((project) => (
 								<ProjectCard key={project.id} {...project} />
 							))}
@@ -295,7 +305,24 @@ export default function Home() {
 					{/* Skills Section */}
 					<section className="space-y-4">
 						<h2 className="font-bold text-xl">Skills</h2>
+						<div className="space-y-2">
+							<Marquee pauseOnHover={false} speed={75} className="py-1" direction="left">
+								{skillsDev.map((skill, index) => (
+									<span key={index} className="bg-slate-100 text-slate-700 font-medium px-4 py-1.5 rounded-full text-sm mx-2">
+										{skill}
+									</span>
+								))}
+							</Marquee>
+							<Marquee pauseOnHover={false} speed={35} className="py-1" direction="right">
+								{skillsCreative.map((skill, index) => (
+									<span key={index} className="bg-slate-100 text-slate-700 font-medium px-4 py-1.5 rounded-full text-sm mx-2">
+										{skill}
+									</span>
+								))}
+							</Marquee>
+						</div>
 					</section>
+
 				</main>
 			</div>
 			<Footer profile={profile} socialLinks={socialLinks} donationLinks={donationLinks} />
