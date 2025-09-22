@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import ProjectCard from "./components/ProjectCard";
-import EducationItem from "./components/EducationItem";
 import {
 	GithubIcon,
 	InstagramIcon,
@@ -12,16 +10,18 @@ import {
 	TakoIcon,
 	PaypalIcon,
 	LinkIcon,
-} from "./components/icons";
+} from "@/components/ui/icons";
 import TextType from "@/components/TextType";
 import DecryptedText from "@/components/DecryptedText";
 import { motion, useScroll } from "motion/react";
 import ShinyText from "@/components/ShinyText";
 import GradientText from "@/components/GradientText";
 import BubbleMenu from "@/components/BubbleMenu";
-import Link from "next/link";
+import ProjectCard from "@/components/ui/ProjectCard";
+import EducationItem from "@/components/ui/EducationItem";
+import Footer from "@/components/ui/Footer";
 
-const items = [
+const bubbleMenuItems = [
 	{
 		label: "HOME",
 		href: "/",
@@ -44,7 +44,7 @@ const items = [
 		hoverStyles: { bgColor: "#f59e0b", textColor: "#ffffff" },
 	},
 	{
-		label: "contact",
+		label: "CONTACT",
 		href: "#",
 		ariaLabel: "Contact",
 		rotation: -8,
@@ -168,7 +168,7 @@ export default function Home() {
 
 			<BubbleMenu
 				logo={<span style={{ fontWeight: 700 }}>Gogooo~</span>}
-				items={items}
+				items={bubbleMenuItems}
 				menuAriaLabel="Toggle navigation"
 				menuBg="#ffffff"
 				menuContentColor="#111111"
@@ -298,55 +298,7 @@ export default function Home() {
 					</section>
 				</main>
 			</div>
-
-			{/* Footer */}
-			<footer className="p-8 max-w-5xl mx-auto flex flex-col sm:flex-row justify-between gap-8 mt-10 border-t border-gray-200 ">
-				<div className="flex flex-col justify-between">
-					<div>
-						<h1 className="font-bold text-xl">{profile.name}</h1>
-						<p className="text-gray-500">
-							Frontend Developer · UI Designer · Content Creator
-						</p>
-					</div>
-					<p className="text-gray-500 text-sm mt-4 sm:mt-0 font-light">
-						© 2025 Syahreza Satria Alfath. All rights reserved.
-					</p>
-				</div>
-				<div className="space-y-4">
-					<div className="space-y-2">
-						<h2 className="font-bold text-lg">Get in touch with me</h2>
-						<div className="flex gap-4">
-							{socialLinks.map((link, index) => (
-								<a
-									key={index}
-									href={link.href}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-gray-500 hover:text-black transition-colors"
-								>
-									{link.icon}
-								</a>
-							))}
-						</div>
-					</div>
-					<div className="space-y-2">
-						<h2 className="font-bold text-lg">Donation</h2>
-						<div className="flex gap-4">
-							{donationLinks.map((link, index) => (
-								<a
-									key={index}
-									href={link.href}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-gray-500 hover:text-black transition-colors"
-								>
-									{link.icon}
-								</a>
-							))}
-						</div>
-					</div>
-				</div>
-			</footer>
+			<Footer profile={profile} socialLinks={socialLinks} donationLinks={donationLinks} />
 		</div>
 	);
 }
