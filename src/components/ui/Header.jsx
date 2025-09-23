@@ -1,8 +1,8 @@
+import { motion, useScroll } from "motion/react";
 import { profile } from "@/data";
 import DecryptedText from "../DecryptedText";
 import TextType from "../TextType";
 import Image from "next/image";
-import { motion, useScroll } from "motion/react";
 
 const Header = () => {
 	const { scrollYProgress } = useScroll();

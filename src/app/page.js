@@ -1,24 +1,17 @@
 "use client";
 
-import {
-	LinkIcon,
-} from "@/components/ui/icons";
-import {
-	profile,
-	projects,
-	education,
-} from "@/data"
+import { LinkIcon } from "@/components/ui/icons";
+import { profile, projects, education } from "@/data";
 import ShinyText from "@/components/ShinyText";
 import GradientText from "@/components/GradientText";
-import ProjectCard from "@/components/ui/ProjectCard";
 import EducationItem from "@/components/ui/EducationItem";
 import SkillItem from "@/components/ui/SkillItem";
 import Header from "@/components/ui/Header";
-
+import ProjectList from "@/components/ui/ProjectList";
 
 export default function Home() {
 	return (
-		<main className="max-w-2xl mx-auto px-4 md:px-0 py-24 lg:py-8 space-y-6 text-gray-800">
+		<main className="max-w-2xl mx-auto px-4 md:px-0 py-24 md:py-28 xl:py-8 space-y-6 text-gray-800">
 			<section className="space-y-4 md:space-y-6 text-gray-800">
 				<Header />
 				<p className="text-sm md:text-base">
@@ -62,10 +55,10 @@ export default function Home() {
 
 			{/* Projects Section */}
 			<section className="space-y-4">
-				<h2 className="font-bold text-xl">Checkout my projects!</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
-					{projects.map((project) => (
-						<ProjectCard key={project.id} {...project} />
+				<h2 className="font-bold text-xl">Projects</h2>
+				<div className="grid grid-cols sm:grid-cols-1 gap-2 items-start">
+					{projects.slice(0, 5).map((project) => (
+						<ProjectList key={project.id} {...project} />
 					))}
 				</div>
 			</section>
@@ -86,7 +79,7 @@ export default function Home() {
 
 			{/* Skills Section */}
 			<section className="space-y-4">
-				<h2 className="font-bold text-xl">Skills</h2>
+				<h2 className="font-bold text-xl">Tools and Software</h2>
 				<SkillItem />
 			</section>
 		</main>
