@@ -102,6 +102,55 @@ export const education = [
 		link: "https://www.youtube.com/watch?v=xfM4X6inBUk",
 	},
 ];
+export const experience = [
+	{
+		id: 1,
+		logo: "/assets/experience/caatis.png",
+		company: "Lakeside F&B Group",
+		position: "IT LEAD",
+		description: [
+			"Lead an eight-person IT team in the development and refinement of three F&B application products (Mobile Membership, POS, and Stock Lakeside F&B Group).",
+			"Fully responsible for system architecture, full-stack development, and product maintenance.",
+			"Collaborate with product and marketing teams to translate business needs into effective technical features.",
+		],
+		period: "Sep 2024 - Jan 2025",
+		link: "https://caatis.matradipti.org/",
+	},
+	{
+		id: 2,
+		logo: "/assets/experience/caatis.png",
+		company: "Caatis COE",
+		position: "User Experience Designer",
+		description: [
+			"Designed high-fidelity wireframes and prototypes for financial management features.",
+			"Analyzed users need to formulate technology-based design solutions for financial record-keeping websites.",
+		],
+		period: "Jun 2023 - Jul 2023",
+		link: "https://caatis.matradipti.org/",
+	},
+	{
+		id: 3,
+		logo: "/assets/experience/caatis.png",
+		company: "Caatis COE",
+		position: "Laboratory Assistant",
+		description: [
+			"Provide technical and analytical support on various web application development and UI/UX design projects in a lab environment.",
+		],
+		period: "Jun 2023 - Jul 2023",
+		link: "https://caatis.matradipti.org/",
+	},
+	{
+		id: 4,
+		logo: "/assets/experience/mcsmb.jpeg",
+		company: "Telkom University Marketing Crew",
+		position: "Social Media Designer",
+		description: [
+			"Designed and produced over 20+ visual content and developed visual strategies for social media campaigns.",
+		],
+		period: "Nov 2022 - Des 2024",
+		link: "https://www.instagram.com/mcsmbtelkom/",
+	},
+];
 
 export const skillsDev = [
 	"MySQL",

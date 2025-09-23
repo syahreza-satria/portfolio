@@ -1,17 +1,18 @@
 "use client";
 
 import { LinkIcon } from "@/components/ui/icons";
-import { profile, projects, education } from "@/data";
+import { profile, projects, education, experience } from "@/data";
 import ShinyText from "@/components/ShinyText";
 import GradientText from "@/components/GradientText";
 import EducationItem from "@/components/ui/EducationItem";
 import SkillItem from "@/components/ui/SkillItem";
 import Header from "@/components/ui/Header";
 import ProjectList from "@/components/ui/ProjectList";
+import ExperienceItem from "@/components/ui/ExperienceItem";
 
 export default function Home() {
 	return (
-		<main className="max-w-2xl mx-auto px-4 md:px-0 py-24 md:py-28 xl:py-8 space-y-6 text-gray-800">
+		<main className="max-w-2xl mx-auto px-4 md:px-0 py-24 md:pt-28 md:pb-4 xl:py-8 space-y-6 text-gray-800">
 			<section className="space-y-4 md:space-y-6 text-gray-800">
 				<Header />
 				<p className="text-sm md:text-base">
@@ -53,12 +54,32 @@ export default function Home() {
 
 			<hr className="border-gray-100" />
 
+			{/* Skills Section */}
+			<section className="space-y-4">
+				<h2 className="font-bold text-xl">Tools and Software</h2>
+				<SkillItem />
+			</section>
+
+			<hr className="border-gray-100" />
+
 			{/* Projects Section */}
 			<section className="space-y-4">
 				<h2 className="font-bold text-xl">Projects</h2>
 				<div className="grid grid-cols sm:grid-cols-1 gap-2 items-start">
-					{projects.slice(0, 5).map((project) => (
+					{projects.slice(0, 3).map((project) => (
 						<ProjectList key={project.id} {...project} />
+					))}
+				</div>
+			</section>
+
+			<hr className="border-gray-100" />
+
+			{/* Education Section */}
+			<section className="space-y-4">
+				<h2 className="font-bold text-xl">Experience</h2>
+				<div className="flex flex-col gap-0">
+					{experience.map((exp) => (
+						<ExperienceItem key={exp.id} {...exp} />
 					))}
 				</div>
 			</section>
@@ -73,14 +94,6 @@ export default function Home() {
 						<EducationItem key={edu.id} {...edu} />
 					))}
 				</div>
-			</section>
-
-			<hr className="border-gray-100" />
-
-			{/* Skills Section */}
-			<section className="space-y-4">
-				<h2 className="font-bold text-xl">Tools and Software</h2>
-				<SkillItem />
 			</section>
 		</main>
 	);
