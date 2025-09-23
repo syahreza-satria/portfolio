@@ -25,14 +25,14 @@ export const bubbleMenuItems = [
     },
     {
         label: "GEAR",
-        href: "#",
+        href: "/gear",
         ariaLabel: "Gear",
         rotation: 8,
         hoverStyles: { bgColor: "#f59e0b", textColor: "#ffffff" },
     },
     {
         label: "CONTACT",
-        href: "#",
+        href: "/contact",
         ariaLabel: "Contact",
         rotation: -8,
         hoverStyles: { bgColor: "#8b5cf6", textColor: "#ffffff" },
@@ -102,7 +102,7 @@ export const education = [
 export const skillsDev = [
     "MySQL",
     "React",
-    "Next.JS",
+    "Next.js",
     "Tailwind CSS",
     "Node.js",
     "JavaScript",
@@ -110,7 +110,8 @@ export const skillsDev = [
     "HTML5",
     "CSS3",
     "Laravel",
-    "Bootstrap CSS"
+    "Bootstrap CSS",
+    "Material UI",
 ];
 
 export const skillsCreative = [
@@ -141,3 +142,38 @@ export const donationLinks = [
     { href: "https://tako.id/SyahrezaSatria", icon: <TakoIcon /> },
     { href: "https://paypal.me/SyahrezaSatriaAlfath", icon: <PaypalIcon /> },
 ];
+
+export const gears = [
+    {
+        id: 1,
+        brand: "Canon",
+        model: "EOS RP",
+        description: "canon eos rp menggunakan teknologi bla bla bla",
+        image: "/assets/gear/canon-eos-rp.jpg",
+        link: "https://www.tokopedia.com/search?st=&q=canon%20eos%20rp&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
+    },
+    {
+        id: 2,
+        brand: "Canon",
+        model: "EOS RP",
+        description: "",
+        image: "/assets/gear/canon-eos-rp.jpg",
+        link: "https://www.tokopedia.com/search?st=&q=canon%20eos%20rp&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
+    },
+    {
+        id: 3,
+        brand: "Canon",
+        model: "EOS RP",
+        description: "",
+        image: "/assets/gear/canon-eos-rp.jpg",
+        link: "https://www.tokopedia.com/search?st=&q=canon%20eos%20rp&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
+    },
+    {
+        id: 4,
+        brand: "Canon",
+        model: "EOS RP",
+        description: "",
+        image: "/assets/gear/canon-eos-rp.jpg",
+        link: "https://www.tokopedia.com/search?st=&q=canon%20eos%20rp&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource="
+    },
+]

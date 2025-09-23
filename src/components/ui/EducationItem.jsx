@@ -12,7 +12,11 @@ const EducationItem = ({ logo, university, degree, gpa, period, link }) => {
 					alt={`${university} Logo`}
 				/>
 				<div>
-					<a href={link} className="font-medium hover:underline">
+					<a
+						href={link}
+						target="_blank"
+						className="font-medium hover:underline"
+					>
 						{university}
 					</a>
 					<p className="text-xs md:text-sm text-gray-500">
